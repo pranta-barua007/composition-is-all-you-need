@@ -3,6 +3,7 @@ import { DMComposer } from "@/components/dm-composer"
 import { ThreadReplyComposer } from "@/components/thread-reply-composer"
 import { ChannelThreadComposer } from "@/components/channel-thread-composer"
 import { EditMessageComposer } from "@/components/edit-message-composer"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
           <p className="text-muted-foreground mb-8">
             Demonstrating the composition pattern with 5 different Slack-style composer variants
           </p>
+          <Link href={"https://github.com/pranta-barua007/composition-is-all-you-need"} target="_blank">Github Repo</Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
