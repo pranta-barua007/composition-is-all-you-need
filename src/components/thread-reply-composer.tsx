@@ -12,8 +12,8 @@ export function ThreadReplyComposer() {
     isSubmitting: false,
     showFormatting: true,
     showEmojis: false,
-    alsoSendAsDM: false,
   })
+  const [alsoSendAsDM, setAlsoSendAsDM] = useState(false)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
   const handleSend = async () => {
@@ -45,8 +45,8 @@ export function ThreadReplyComposer() {
           <div className="flex items-center space-x-2">
             <Checkbox
               id="also-send-dm"
-              checked={state.alsoSendAsDM}
-              onCheckedChange={(checked) => setState((prev) => ({ ...prev, alsoSendAsDM: !!checked }))}
+              checked={alsoSendAsDM}
+              onCheckedChange={(checked) => setAlsoSendAsDM(!!checked)}
             />
             <label htmlFor="also-send-dm" className="text-sm text-muted-foreground">
               Also send as direct message
