@@ -16,7 +16,7 @@ export function ComposerSubmit({ children }: ComposerSubmitProps) {
   return (
     <Button
       onClick={actions.submit}
-      disabled={!(state as any).message?.trim() || (state as any).isSubmitting}
+      disabled={!state.message?.trim() || state.isSubmitting}
       size="sm"
       className="ml-auto"
     >
