@@ -12,7 +12,7 @@ const EmojiPicker = dynamic(() => import("emoji-picker-react"), { ssr: false })
 export function ComposerEmojis() {
   const { state, actions, meta } = useComposer()
   const [isOpen, setIsOpen] = useState(false)
-
+  
   const handleEmojiClick = (emojiData: any) => {
     const textarea = meta.inputRef.current
     if (!textarea) return
@@ -21,7 +21,7 @@ export function ComposerEmojis() {
     const end = textarea.selectionEnd
     const emoji = emojiData.emoji
 
-    const newMessage = (state as any).message.substring(0, start) + emoji + (state as any).message.substring(end)
+    const newMessage = state.message.substring(0, start) + emoji + state.message.substring(end)
 
     actions.update((current) => ({ ...current, message: newMessage }))
 
