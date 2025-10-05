@@ -13,7 +13,7 @@ export function ComposerTextFormat() {
 
     const start = textarea.selectionStart
     const end = textarea.selectionEnd
-    const selectedText = (state as any).message.substring(start, end)
+    const selectedText = state.message.substring(start, end)
 
     let formattedText = selectedText
     let wrapper = ""
@@ -36,8 +36,7 @@ export function ComposerTextFormat() {
       formattedText = `${wrapper}${selectedText}${wrapper}`
     }
 
-    const newMessage =
-      (state as any).message.substring(0, start) + formattedText + (state as any).message.substring(end)
+    const newMessage = state.message.substring(0, start) + formattedText + state.message.substring(end)
 
     actions.update((current) => ({ ...current, message: newMessage }))
 
